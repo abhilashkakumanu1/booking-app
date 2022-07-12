@@ -3,22 +3,33 @@ package main
 import "fmt"
 
 func main() {
-	// Type inference when you initialize a variable
 	conferenceName := "Go conference"
-	const conferenceTickets = 50   // can't define constants with syntactic sugar
-	var remainingTickets uint = 50 // protects us from mistakenly set it to negative value
-
-	//  fmt.Printf("conferenceTickets is %T, remainingTickets is %T, conferenceName is %T\n", conferenceTickets, remainingTickets, conferenceName)
+	const conferenceTickets = 50
+	var remainingTickets uint = 50
 
 	fmt.Printf("Welcome to '%v' booking application\n", conferenceName)
 	fmt.Printf("We have a total of %v of which %v are remaining\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 
-	var userName string
+	var firstName string
+	var lastName string
+	var email string
 	var userTickets int
 
 	// ask user for their name
-	userName = "Tom"
-	userTickets = 2
-	fmt.Printf("User %v booked %v tickets.\n", userName, userTickets)
+	fmt.Print("Enter your first name: ")
+	fmt.Scan(&firstName)
+
+	fmt.Print("Enter your last name: ")
+	fmt.Scan(&lastName)
+
+	fmt.Print("Enter your email: ")
+	fmt.Scan(&email)
+
+	fmt.Print("Enter number of tickets: ")
+	fmt.Scan(&userTickets)
+
+	remainingTickets = remainingTickets - uint(userTickets)
+
+	fmt.Printf("Thank you %v %v for booking %v tickets. You wil receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 }
