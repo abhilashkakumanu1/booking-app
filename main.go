@@ -11,6 +11,9 @@ func main() {
 	fmt.Printf("We have a total of %v of which %v are remaining\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 
+	// Arrays in Go have fixed size, same data type
+	var bookings [50]string
+
 	var firstName string
 	var lastName string
 	var email string
@@ -30,6 +33,12 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remainingTickets = remainingTickets - uint(userTickets)
+	bookings[0] = firstName + " " + lastName
+
+	fmt.Printf("The whole bookings array: %v\n", bookings)
+	fmt.Printf("The first value: %v\n", bookings[0])
+	fmt.Printf("Array type: %T\n", bookings)
+	fmt.Printf("Array length: %v\n", len(bookings))
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You wil receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 }
