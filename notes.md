@@ -9,13 +9,13 @@ In go all the code is in packages
 
 \_ => blank identifier
 
-package level variables => variables hared among multiple functions
+package level variables => variables shared among multiple functions
 
 package is a collection of go files
 
 You can't just do `go run main.go` when code is shared across files. You have to specify every file - `go run main.go helper.go`. Or you can also just specify the path to the package and it will run the `main func` - `go run .`
 
-capitalizing the function is going to export teh function - (reason why capital P in `fmt.Println`)
+capitalizing the function is going to export the function - (reason why capital P in `fmt.Println`)
 
 3 levels of variables => local, Package, Global (capital letter)
 
